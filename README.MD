@@ -1,5 +1,6 @@
 # Instaclone
 
+## setup
 install apollo server 
 install graphQL
 
@@ -20,3 +21,12 @@ npm i
 
 dotenv
 환경변수를 process.env.변수명으로 로드하기 위한 모듈
+
+## user:
+- [ ] Create Account
+- [ ] See profile
+- [ ] Login
+- [ ] Edit Profile
+- [ ] Follow User
+- [ ] Unfollow user
+- [ ] Change avatar(image upload)
