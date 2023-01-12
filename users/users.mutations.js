@@ -14,12 +14,18 @@ export default {
                     throw new Error("Check that the username / email aren't taken");
                 }
                 const uglyPassword = await bcrypt.hash(password, 10);
-                const user = client.user.create({data:{
+                const user = await client.user.create({data:{
                     username, email, name, password:uglyPassword,
                 }});
-                return user;
+                return {
+                    ok: true,
+                    id: user.id
+                };
             } catch (e) {
-                return e;
+                return { 
+                    ok: false,
+                    error: e.message,
+                };
             }
         },
     }

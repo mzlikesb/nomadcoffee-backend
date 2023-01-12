@@ -12,13 +12,18 @@ export default gql`
         createdAt: String!
         updatedAt: String!
     }
+    type CommonResponse{
+        ok: Boolean!
+        id: Int
+        error: String
+    }
     type Mutation{
         createAccount(
             username: String!
             email: String!
             name: String!
             password: String!
-        ): User
+        ): CommonResponse!
     }
     type Query{
         seeProfile(username: String!): User
